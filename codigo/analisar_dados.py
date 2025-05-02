@@ -251,45 +251,11 @@ try:
     plt.savefig('../visualizacoes/03_proporcao_menor.png', dpi=300)
     plt.close()
     
-    # 4. Visualização: Relação entre população e atendimentos
-    plt.figure(figsize=(10, 8))
-    plt.scatter(dados_analise['populacao_estimada'], dados_analise['total_atendimentos'], alpha=0.7)
-    plt.xscale('log')
-    plt.yscale('log')
-    plt.title('Relação entre População e Atendimentos SUS nos Municípios do Ceará')
-    plt.xlabel('População Estimada (escala log)')
-    plt.ylabel('Total de Atendimentos (escala log)')
-    plt.grid(True, alpha=0.3)
-    
-    # Adicionar linha de tendência
-    coef = np.polyfit(np.log10(dados_analise['populacao_estimada']), 
-                     np.log10(dados_analise['total_atendimentos']), 1)
-    trend_x = np.logspace(np.log10(dados_analise['populacao_estimada'].min()), 
-                          np.log10(dados_analise['populacao_estimada'].max()), 100)
-    trend_y = 10 ** (coef[0] * np.log10(trend_x) + coef[1])
-    plt.plot(trend_x, trend_y, 'r--', alpha=0.7)
-    
-    plt.tight_layout()
-    plt.savefig('../visualizacoes/04_relacao_populacao_atendimentos.png', dpi=300)
-    plt.close()
-    
-    # 5. Visualização: Distribuição dos atendimentos por 100 mil habitantes
-    plt.figure(figsize=(10, 6))
-    sns.histplot(data=dados_analise, x='atendimentos_por_100mil', bins=20, kde=True)
-    plt.title('Distribuição dos Atendimentos por 100 mil Habitantes nos Municípios do Ceará')
-    plt.xlabel('Atendimentos por 100 mil Habitantes')
-    plt.ylabel('Número de Municípios')
-    plt.tight_layout()
-    plt.savefig('../visualizacoes/05_distribuicao_atendimentos.png', dpi=300)
-    plt.close()
-    
     print("\nVisualizações criadas com sucesso!")
     print("Arquivos gerados:")
     print("- ../visualizacoes/01_volume_atendimentos_municipio.png")
     print("- ../visualizacoes/02_proporcao_maior.png")
     print("- ../visualizacoes/03_proporcao_menor.png")
-    print("- ../visualizacoes/04_relacao_populacao_atendimentos.png")
-    print("- ../visualizacoes/05_distribuicao_atendimentos.png")
     
 except Exception as e:
     print(f"Erro ao analisar os dados: {e}")
