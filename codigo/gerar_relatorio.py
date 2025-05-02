@@ -15,8 +15,6 @@ try:
         '../visualizacoes/01_volume_atendimentos_municipio.png',
         '../visualizacoes/02_proporcao_maior.png',
         '../visualizacoes/03_proporcao_menor.png',
-        '../visualizacoes/04_relacao_populacao_atendimentos.png',
-        '../visualizacoes/05_distribuicao_atendimentos.png'
     ]
     
     arquivos_faltantes = [f for f in arquivos_necessarios if not os.path.exists(f)]
