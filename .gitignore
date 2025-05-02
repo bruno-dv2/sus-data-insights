@@ -1,0 +1,15 @@
+# Ignorar arquivos grandes de dados
+*.csv
+*.txt
+
+# Ignorar arquivos Python compilados
+__pycache__/
+*.py[cod]
+
+# Ignorar ambientes virtuais
+venv/
+env/
+
+# Ignorar arquivos do sistema operacional
+.DS_Store
+Thumbs.db
