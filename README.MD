@@ -46,6 +46,7 @@ Para usar:
 ```bash
 python3 codigo/limpar_e_executar.py
 
+
 ## Requisitos
 
 - Python 3.6 ou superior
