@@ -30,9 +30,21 @@ Estes arquivos precisam ser adicionados manualmente à pasta `dados/` antes de e
    ```bash
    python3 codigo/analisar_dados.py
    python3 codigo/gerar_relatorio.py
-
-
+   
 5. O relatório final será gerado em `resultados/relatorio_atendimentos_sus.html`
+
+### Execução Rápida
+
+Para maior conveniência, o repositório inclui um script `limpar_e_executar.py` que automatiza o processo de análise:
+
+1. Este script limpa resultados de análises anteriores
+2. Executa os scripts de processamento na ordem correta 
+3. Abre automaticamente o relatório no navegador quando concluído
+
+Para usar:
+
+```bash
+python3 codigo/limpar_e_executar.py
 
 ## Requisitos
 
